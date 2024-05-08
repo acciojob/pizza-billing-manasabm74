@@ -17,47 +17,6 @@ public class Pizza {
     boolean isTakeAway;
 
 
-    public int getToppings() {
-        return toppings;
-    }
-
-    public void setToppings(int toppings) {
-        this.toppings = toppings;
-    }
-
-    public boolean isExtraCheeseAdded() {
-        return isExtraCheeseAdded;
-    }
-
-    public void setExtraCheeseAdded(boolean extraCheeseAdded) {
-        isExtraCheeseAdded = extraCheeseAdded;
-    }
-
-    public boolean isExtrasToppingAdded() {
-        return isExtrasToppingAdded;
-    }
-
-    public void setExtrasToppingAdded(boolean extrasToppingAdded) {
-        isExtrasToppingAdded = extrasToppingAdded;
-    }
-
-    public boolean isBillCreated() {
-        return isBillCreated;
-    }
-
-    public void setBillCreated(boolean billCreated) {
-        isBillCreated = billCreated;
-    }
-
-    public boolean isTakeAway() {
-        return isTakeAway;
-    }
-
-    public void setTakeAway(boolean takeAway) {
-        isTakeAway = takeAway;
-    }
-
-
 
     //once we create a variable we nned to initalize it
     //boolean by default iniatiaze maeans thay said btdefault false;
@@ -68,23 +27,22 @@ public class Pizza {
         // your code goes here
         if(isVeg){
             this.price = 300;
-            this.toppings= 70;
+            this.toppings = 70;
+
         }
         else{
             this.price = 400;
             this.toppings = 120;
+
         }
 
         //boolean by default false,but iniatailze the is again agud practice
-        boolean isExtraCheeseAdded = false;
-        boolean isExtraToppingAdded = false;
-        boolean isBillCreated = false;
-        boolean isTakeAway = false;
+
 
         //whwre we can gte exexact bill sseing baseprice
         // right other are addupso
 
-        this.bill = "Base price of the pizza:" +this.price+"\n";
+        this.bill = "Base price of the pizza:" +this.price+ "\n";
 
     }
 
