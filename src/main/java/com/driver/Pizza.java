@@ -6,101 +6,98 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
-    //we create variable
-    private int toppings;
+    //here creating variable  we need to look for variable have diffrent price
+    //that is toppings
+     private  int toppings;
 
-    //what we ave to take care off
+
+
+    //and create variable with boolean for extra's
     boolean isExtraCheeseAdded;
-    boolean isExtrasToppingAdded;
+    boolean isExtraToppingsAdded;
+    boolean isTakeAway;
     boolean isBillCreated;
 
-    boolean isTakeAway;
 
 
 
-    //once we create a variable we nned to initalize it
-    //boolean by default iniatiaze maeans thay said btdefault false;
 
 
-    public Pizza(Boolean isVeg){
+
+    public Pizza(Boolean isVeg) {
         this.isVeg = isVeg;
-        // your code goes here
+        //here we need to inialize it
         if(isVeg){
             this.price = 300;
             this.toppings = 70;
-
         }
         else{
             this.price = 400;
             this.toppings = 120;
-
         }
 
-        //boolean by default false,but iniatailze the is again agud practice
+        //for bollean variable by default it is set to  be false its ok
+        // we inialize it or else its ok not inlize it bcz ,by default they are false
 
+      this.isExtraCheeseAdded = false;
+        this.isExtraToppingsAdded = false;
+        this.isBillCreated = false;
+        this.isTakeAway = false;
 
-        //whwre we can gte exexact bill sseing baseprice
-        // right other are addupso
-
-        this.bill = "Base price of the pizza:" +this.price+ "\n";
+        this.bill= "Base Price Of The Pizza: "+ this.price+"\n";
 
     }
 
-    public int getPrice(){
+    public int getPrice() {
 
         return this.price;
     }
 
-    public void addExtraCheese(){
+    public void addExtraCheese() {
         // your code goes here
-        //if we write like this it add evrytime the chese so
-        if(!isExtraCheeseAdded) {
-            this.price += 80;
-            this.isExtraCheeseAdded = true;
-            //once we added we set this to true;
-        }
+      if(!isExtraCheeseAdded){
+          this.price += 80;
+          isExtraCheeseAdded = true;
+      }
 
     }
 
-    public void addExtraToppings(){
+    public void addExtraToppings() {
         // your code goes here
-        if(!isExtrasToppingAdded){
-            //here insted of writing the topping pirice
-            // we can directly say this,toppings
-            //becasues we intilaize it in chese scction
-            //this.price += 120;
-
+        if(!isExtraToppingsAdded){
             this.price += this.toppings;
-            isExtrasToppingAdded = true;
+            isExtraToppingsAdded = true;
         }
+
+
     }
 
-    public void addTakeaway(){
+    public void addTakeaway() {
         // your code goes here
         if(!isTakeAway){
             this.price += 20;
             isTakeAway = true;
+
         }
+
     }
 
     public String getBill() {
         // your code goes here
-        if (!isBillCreated) {
-            if (isExtraCheeseAdded) {
-                this.bill += "Extra Cheese Added:80" + "\n";
+        if(!isBillCreated){
+            if(isExtraCheeseAdded){
+                this.bill ="Extra Cheese Added: 80"+"\n";
             }
-            if (isExtrasToppingAdded) {
-                this.bill += "Extra Toppings Added:" + this.toppings + "\n";
+            if(isExtraToppingsAdded){
+                this.bill ="Extra Toppings Added:"+this.toppings+"\n";
             }
-            if (isTakeAway) {
-                this.bill += "Paperbag Added:20" + "\n";
+            if(isTakeAway){
+                this.bill ="Paperbag Added: 20"+"\n";
             }
-
-            this.bill += "Total Price" + this.price;
+            this.bill += "Total Price:"+this.price+"\n";
             this.isBillCreated = true;
-
-            return this.bill;
         }
-        return "";
+        return this.bill;
     }
 }
+
